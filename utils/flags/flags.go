@@ -170,6 +170,13 @@ func GetCliFlags() []cli.Flag {
 			DefaultText: strconv.FormatInt(math.MaxInt64, 10),
 			EnvVars:     []string{"BAZEL_REMOTE_MAX_BLOB_SIZE"},
 		},
+		&cli.IntFlag{
+			Name:        "max_recv_msg_size",
+			Value:       math.MaxInt32,
+			Usage:       "The maximum message size in bytes the server can receive.",
+			DefaultText: strconv.FormatInt(math.MaxInt32, 10),
+			EnvVars:     []string{"BAZEL_REMOTE_MAX_RECV_MSG_SIZE"},
+		},
 		&cli.Int64Flag{
 			Name:        "max_proxy_blob_size",
 			Value:       math.MaxInt64,
